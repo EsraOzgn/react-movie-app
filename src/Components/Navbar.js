@@ -6,10 +6,7 @@ import {CgDarkMode} from 'react-icons/cg'
 
 
 
-
-
-
-const Navbar = ({movies,query,setQuery,setMovies,setLogin,login}) => {
+const Navbar = ({setWatchList,movies,query,setQuery,setMovies,setLogin,login}) => {
 
     const searchMovie = async(e)=> {
         e.preventDefault();
@@ -35,21 +32,26 @@ const Navbar = ({movies,query,setQuery,setMovies,setLogin,login}) => {
       }
 
   return (
+
+
     <div>
         <nav className="flex gap-x-8 bg-gray-800 text-sm justify-around items-center">
-  <a href="/dashboard" className="font-medium px-3 py-2 text-blue-300 rounded-lg"><GiSeaTurtle size={40}/></a>
+          
+          <a href="/dashboard" className="font-medium px-3 py-2 text-blue-300 rounded-lg"><GiSeaTurtle size={40}/></a>
 
 
-<form className='w-[40%]' onSubmit={searchMovie} >
+            <form className='w-[40%] ' onSubmit={searchMovie} >
 
-    <input type='Search'  placeholder='Search' className='w-[80%] rounded-xl h-9 outline-none p-4' aria-label='Search' name='query' value={query} onChange={changeHandler} onSubmit={searchMovie} ></input>
+              <input type='Search'  placeholder='Search' className='w-[80%] rounded-xl h-9 outline-none p-4' aria-label='Search' name='query' value={query} onChange={changeHandler} onSubmit={searchMovie} ></input>
 
-</form>
+            </form>
   
-  <a href="#" className="font-medium px-3 py-2 text-blue-400 rounded-lg hover:bg-slate-100 hover:text-slate-900"><BsBookmarkPlus/> Watchlist</a>
-  <a onClick={()=> setLogin(true)} href="#" className="font-medium px-3 py-2 text-blue-400 rounded-lg hover:bg-slate-100 hover:text-slate-900"> <AiOutlineUserAdd/> Sign In</a>
-  <a href="#" className="font-medium px-3 py-2 text-blue-400 rounded-lg hover:bg-slate-100 hover:text-slate-900"> <CgDarkMode/> Dark/Light</a>
-</nav>
+          <div onClick={()=> setWatchList(true)}  className="font-medium px-3 py-2 text-blue-400 rounded-lg hover:bg-slate-100 hover:text-slate-900"><BsBookmarkPlus/> Watchlist</div>
+
+          <a onClick={()=> setLogin(true)} href="#" className="font-medium px-3 py-2 text-blue-400 rounded-lg hover:bg-slate-100 hover:text-slate-900"> <AiOutlineUserAdd/> Sign In</a>
+
+          <a href="#" className="font-medium px-3 py-2 text-blue-400 rounded-lg hover:bg-slate-100 hover:text-slate-900"> <CgDarkMode/> Dark/Light</a>
+        </nav>
 
     </div>
   )

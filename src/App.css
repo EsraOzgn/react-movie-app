@@ -4,5 +4,26 @@ body {
   padding: 0;
   text-decoration: none;
   list-style-type: none;
-  background-color: rgb(58, 65, 63) ;
+  background-color: white !important ;
 }
+
+.input {
+  transition: border 0.2s ease-in-out;
+  min-width: 280px
+}
+
+.input:focus+.label,
+.input:active+.label,
+.input.filled+.label {
+  font-size: .75rem;
+  transition: all 0.2s ease-out;
+  top: -0.1rem;
+  color: #667eea;
+}
+
+.label {
+  transition: all 0.2s ease-out;
+  top: 0.4rem;
+  left: 0;
+}
+

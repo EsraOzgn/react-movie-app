@@ -1,1 +1,5 @@
 ![login](/src/img/login.png)
+![homepage](/src/img/homepage.png)
+![darkmode](/src/img/darkmode.png)
+![overview](/src/img/overview.png)
+![watchlist](/src/img/watchlist.png)
